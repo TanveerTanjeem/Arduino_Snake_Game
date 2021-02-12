@@ -4,7 +4,7 @@
 LiquidCrystal lcd(12, 11, 5, 4, 3, 2);
 
 
-byte mySnake[9][8] = 
+byte the_Snake[9][8] = 
 {
 { B00000,
   B00000,
@@ -294,6 +294,7 @@ void createSnake(int n) // n = size of snake
     for (j=0;j<80;j++)
       x[i][j] = false;
     
+		
   part *p, *q;
   tail = (part*)malloc(sizeof(part));
   tail->row = 7;
@@ -337,7 +338,7 @@ void startF(int speed)
   lcd.print("Select level: 1");
   for(i=0;i<8;i++)
   {
-    lcd.createChar(i,mySnake[i]);
+    lcd.createChar(i,the_Snake[i]);
     lcd.setCursor(i+4,1);
     lcd.write(byte(i));
   }
